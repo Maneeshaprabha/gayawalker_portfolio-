@@ -1,8 +1,12 @@
 export default function TopBar() {
   return (
     // 'hidden md:block' eka ain kala. Mobile waladi padding adu kala ida ithuru wenna.
-    <div className="w-full pt-2 md:pt-4 px-4 md:px-12 absolute top-0 left-0 z-50">
-      <div className="max-w-[1400px] mx-auto bg-[#2A2A2A] text-gray-200 rounded-[16px] md:rounded-full px-4 md:px-6 py-2 md:py-2 flex flex-col md:flex-row justify-between items-center text-[10px] md:text-sm font-medium shadow-lg gap-1.5 md:gap-0">
+   
+<div className="absolute top-0 left-0 z-[10000] w-full px-3 pt-2 sm:px-4 md:px-12 md:pt-4">
+
+      
+<div className="mx-auto flex max-w-[1400px] flex-col items-center justify-between gap-1.5 rounded-[16px] bg-[#2A2A2A] px-3 py-2 text-[10px] font-medium text-gray-200 shadow-lg sm:px-4 md:flex-row md:gap-0 md:rounded-full md:px-6 md:py-2 md:text-sm">
+
         
         {/* Contact Info (Mobile waladi peli dekakata yanawa lassanata) */}
         <div className="flex items-center justify-center gap-3 md:gap-6 text-center">
