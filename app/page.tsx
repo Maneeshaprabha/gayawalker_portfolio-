@@ -1,3 +1,5 @@
+import TopBar from './../src/components/TopBar';
+import Navbar from './../src/components/Navbar';
 import Hero from './../src/components/Hero';
 import Gallery from './../src/components/Gallery';
 import Approach from './../src/components/Approach';
@@ -14,6 +16,9 @@ import AboutMe from './../src/components/AboutMe';
 export default function Home() {
   return (
     <main className="min-h-screen">
+    
+      <TopBar />
+      <Navbar />
       
       <Hero />
       <Approach />
@@ -28,4 +33,3 @@ export default function Home() {
     </main>
   );
 }
-
