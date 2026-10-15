@@ -22,8 +22,8 @@ export default function YouTubeSection() {
             viewport={{ once: true }}
           >
             <div className="flex items-center gap-2 mb-3">
-              <Sparkles size={16} className="text-red-500" />
-              <span className="text-red-500 font-bold text-xs uppercase tracking-[0.2em]">Latest Drops</span>
+              <Sparkles size={16} className="text-[#0BB671]" />
+              <span className="text-[#0BB671] font-bold text-xs uppercase tracking-[0.2em]">Latest Drops</span>
             </div>
             <h2 className="text-4xl md:text-6xl font-black tracking-tighter">
               Cinematic <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">Stories.</span>
