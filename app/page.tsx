@@ -62,7 +62,7 @@ export default function Home() {
         <Services />
       </RevealSection>
 
-      <RevealSection>
+      <RevealSection >
         <Pricing />
       </RevealSection>
 

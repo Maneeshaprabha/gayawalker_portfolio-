@@ -78,7 +78,7 @@ const ValueCell = ({ value }) => {
 
 export default function Pricing() {
   return (
-    <section className="bg-[#0f0f0f] text-white py-24 md:py-32 px-6 md:px-12 w-full border-t border-[#1f1f1f]">
+    <section   id="pricing"  className="bg-[#0f0f0f] text-white py-24 md:py-32 px-6 md:px-12 w-full border-t border-[#1f1f1f]">
       <div className="max-w-5xl mx-auto">
         
         {/* Header Section */}

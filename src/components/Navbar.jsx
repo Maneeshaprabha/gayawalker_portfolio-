@@ -56,32 +56,42 @@ export default function Navbar() {
     { name: "PRICING", target: "pricing" },
   ];
 
-  const handleScrollClick = (e, targetId) => {
-    e.preventDefault();
-    setIsMobileMenuOpen(false);
+const handleScrollClick = (e, targetId) => {
+  e.preventDefault();
+  setIsMobileMenuOpen(false);
 
-    if (targetId === "home" && window.location.pathname !== "/") {
-      window.location.href = "/#home";
+  // Navigate to the home page if currently on another route
+  if (window.location.pathname !== "/") {
+    window.location.href = `/#${targetId}`;
+    return;
+  }
+
+  const scrollToSection = () => {
+    const targetElement = document.getElementById(targetId);
+
+    if (!targetElement) {
+      console.warn(`Section not found: #${targetId}`);
       return;
     }
 
-    const targetElement = document.getElementById(targetId);
+    const navbarOffset = window.innerWidth < 768 ? 85 : 110;
 
-    if (targetElement) {
-      const navbarOffset = window.innerWidth < 768 ? 85 : 110;
-      const targetPosition =
-        targetElement.getBoundingClientRect().top +
-        window.scrollY -
-        navbarOffset;
+    const targetPosition =
+      targetElement.getBoundingClientRect().top +
+      window.scrollY -
+      navbarOffset;
 
-      window.scrollTo({
-        top: Math.max(0, targetPosition),
-        behavior: "smooth",
-      });
+    window.scrollTo({
+      top: Math.max(0, targetPosition),
+      behavior: "smooth",
+    });
 
-      window.history.replaceState(null, "", `#${targetId}`);
-    }
+    window.history.replaceState(null, "", `#${targetId}`);
   };
+
+  scrollToSection();
+};
+
 
   return (
     <>

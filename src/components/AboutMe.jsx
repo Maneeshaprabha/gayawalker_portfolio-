@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function AboutMe() {
   return (
-    <section className="relative w-full min-h-[90vh] lg:min-h-screen bg-[#F8F9FA] text-black overflow-hidden flex items-center z-30">
+    <section  id = "about" className="relative w-full min-h-[90vh] lg:min-h-screen bg-[#F8F9FA] text-black overflow-hidden flex items-center z-30">
       {/* Background Horizontal Lines Pattern */}
       <div 
         className="absolute inset-0 pointer-events-none opacity-40 z-0" 
