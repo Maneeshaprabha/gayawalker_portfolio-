@@ -1,4 +1,5 @@
 "use client"; // Framer motion use karana nisa meka aniwaryen danna oni
+import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 import TopBar from './../src/components/TopBar';
 import Navbar from './../src/components/Navbar';
@@ -16,19 +17,24 @@ import Contact from './../src/components/Contact';
 import AboutMe from './../src/components/AboutMe';
 
 // Scroll karaddi lassanata yatin uda ena animation wrapper eka
-const RevealSection = ({ children }) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 80 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }} // Screen ekata 100px awama thamai animation eka wada karanne
-      transition={{ duration: 0.8, ease: "easeOut" }}
-    >
-      {children}
-    </motion.div>
-  );
-};
-
+const RevealSection = ({
+  children,
+  id,
+}: {
+  children: ReactNode;
+  id?: string;
+}) => (
+  <motion.div
+    id={id}
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.15 }}
+    transition={{ duration: 0.7 }}
+    className="scroll-mt-28"
+  >
+    {children}
+  </motion.div>
+);
 export default function Home() {
   return (
     // bg-[#111111] dala thiyenawa sections athara his ida kalu paatin penna

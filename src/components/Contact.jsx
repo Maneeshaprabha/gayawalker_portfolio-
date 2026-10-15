@@ -256,7 +256,7 @@ export default function Contact() {
 
         {/* COPYRIGHT */}
         <div className="relative z-20 mt-8 px-4 text-center text-[9px] font-bold uppercase tracking-[0.15em] text-gray-500 sm:absolute sm:bottom-6 sm:mt-0 sm:text-[10px] sm:tracking-[0.2em]">
-          © {new Date().getFullYear()} Gaya Walker. All rights reserved.
+          ©  Gaya Walker. All rights reserved.
         </div>
       </div>
     </footer>
