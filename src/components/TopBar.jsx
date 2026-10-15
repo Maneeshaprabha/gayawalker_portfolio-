@@ -11,7 +11,7 @@ export default function TopBar() {
           </a>
           <span className="text-gray-500">|</span>
           <a href="mailto:neuros@mail.co" className="hover:text-[#0BB671] transition-colors flex items-center gap-1">
-            <span className="hidden sm:inline">Email: </span>neuros@mail.co
+            <span className="hidden sm:inline">Email: </span>gayankanchana@mail.co
           </a>
         </div>
 

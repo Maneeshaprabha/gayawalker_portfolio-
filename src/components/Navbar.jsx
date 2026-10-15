@@ -9,8 +9,9 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { scrollY } = useScroll();
 
+  // Scroll height check
   useMotionValueEvent(scrollY, "change", (latest) => {
-    if (latest > 50) {
+    if (latest > 60) {
       setIsScrolled(true);
     } else {
       setIsScrolled(false);
@@ -50,18 +51,19 @@ export default function Navbar() {
   return (
     <>
       {/* Desktop & Top Navbar */}
-     <motion.div 
+      <motion.div 
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        // Methana "top-[75px]" kara mobile waladi TopBar ekata wadi idak denna
-        className={`w-full px-4 md:px-12 z-40 transition-all duration-300 ${
-          isScrolled ? "fixed top-2 md:top-4 left-0" : "absolute top-[75px] md:top-[70px] left-0"
+        // Methana 'top-5' saha 'top-[85px]' dala fix kala. Etakota mobile waladi kapenne na!
+        className={`w-full px-4 md:px-12 z-50 transition-all duration-300 ${
+          isScrolled ? "fixed top-5 md:top-6 left-0" : "absolute top-[85px] md:top-[70px] left-0"
         }`}
       >
-        <div className={`max-w-[1400px] mx-auto rounded-full px-6 md:px-8 py-3.5 flex items-center justify-between transition-all duration-300 ${
-          isScrolled ? "bg-black/60 backdrop-blur-xl border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.5)]" : "bg-black/20 backdrop-blur-xl border border-white/5 shadow-2xl"
+        <div className={`max-w-[1400px] mx-auto rounded-full px-6 md:px-8 py-3 flex items-center justify-between transition-all duration-300 ${
+          isScrolled ? "bg-black/80 backdrop-blur-xl border border-white/20 shadow-[0_10px_40px_rgba(0,0,0,0.6)]" : "bg-black/30 backdrop-blur-xl border border-white/10 shadow-2xl"
         }`}>
+          
           <div className="flex items-center gap-6">
             <motion.button 
               whileHover={{ scale: 1.1 }}
@@ -120,7 +122,7 @@ export default function Navbar() {
               onClick={(e) => handleScroll(e, "contact")}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="hidden md:block bg-[#0BB671] hover:bg-emerald-400 text-black text-sm font-bold px-8 py-3 rounded-full transition-colors tracking-wide shadow-[0_0_20px_rgba(11,182,113,0.2)]"
+              className="hidden md:block bg-[#0BB671] hover:bg-emerald-400 text-black text-sm font-bold px-8 py-2.5 rounded-full transition-colors tracking-wide shadow-[0_0_20px_rgba(11,182,113,0.2)]"
             >
               Get in touch
             </motion.button>
@@ -147,15 +149,12 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ type: "spring", bounce: 0, duration: 0.4 }}
-              // overflow-y-auto damma content eka wadi unoth scroll karanna puluwan wenna
               className="fixed top-0 left-0 w-[90%] max-w-[400px] h-full bg-[#1c1c1c] z-[70] flex flex-col shadow-2xl overflow-y-auto"
             >
-              {/* Green Gradient Wave Effect */}
               <div className="absolute bottom-0 left-0 w-full h-[40%] bg-gradient-to-tr from-[#0BB671]/20 via-transparent to-[#041E15]/40 pointer-events-none opacity-80" />
               <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-[#0BB671]/20 rounded-full blur-[80px] pointer-events-none" />
               <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-emerald-700/20 rounded-full blur-[80px] pointer-events-none" />
               
-              {/* Fake SVG lines */}
               <div className="absolute bottom-0 left-0 w-full h-[30%] opacity-20 pointer-events-none overflow-hidden flex items-end">
                  <div className="w-[200%] h-[200px] border-[1px] border-[#0BB671] rounded-[100%] ml-[-50%] mb-[-50px]" />
                  <div className="absolute w-[180%] h-[180px] border-[1px] border-[#0BB671] rounded-[100%] ml-[-40%] mb-[-40px]" />
@@ -163,7 +162,6 @@ export default function Navbar() {
               </div>
 
               <div className="relative z-10 flex flex-col h-full p-8 md:p-10">
-                {/* Logo & Close Button */}
                 <div className="flex justify-between items-start mb-10">
                   <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="5" cy="15" r="2.5" fill="#FFFFFF"/>
@@ -180,7 +178,6 @@ export default function Navbar() {
                   </button>
                 </div>
 
-                {/* ===== NAVIGATION LINKS (Aluthin Add Kala) ===== */}
                 <div className="flex flex-col gap-5 mb-10">
                   <h4 className="text-[11px] font-bold text-gray-500 uppercase tracking-[0.2em] mb-2">Menu</h4>
                   {navLinks.map((link) => (
@@ -195,19 +192,15 @@ export default function Navbar() {
                   ))}
                 </div>
 
-                {/* ===== CONTACTS SECTION ===== */}
                 <div className="flex flex-col gap-6 pt-8 border-t border-white/10">
                   <h4 className="text-[11px] font-bold text-gray-500 uppercase tracking-[0.2em]">Contacts</h4>
-
                   <div className="text-white text-[15px] font-medium leading-relaxed">
                     <p>Colombo, Sri Lanka</p>
                     <p className="text-gray-400">(Global Travel)</p>
                   </div>
-
                   <div className="text-white text-[15px] font-medium leading-relaxed">
                     <p>+94 77 123 4567</p>
                   </div>
-
                   <div>
                     <a href="mailto:hello@gayawalker.com" className="text-white text-[15px] font-medium underline decoration-1 underline-offset-4 hover:text-[#0BB671] transition-colors">
                       hello@gayawalker.com
@@ -215,7 +208,6 @@ export default function Navbar() {
                   </div>
                 </div>
 
-                {/* Green Gradient Button */}
                 <div className="mt-10 mb-8">
                   <button onClick={(e) => handleScroll(e, "contact")} className="relative rounded-full p-[1.5px] bg-gradient-to-r from-[#0BB671] to-emerald-300 w-full group">
                     <div className="bg-[#1c1c1c] rounded-full px-8 py-3.5 flex items-center justify-center transition-colors group-hover:bg-transparent">
@@ -224,7 +216,6 @@ export default function Navbar() {
                   </button>
                 </div>
 
-                {/* Social Media Icons */}
                 <div className="mt-auto flex items-center gap-6 pb-2 justify-center">
                   <a href="#" aria-label="Facebook" className="text-white hover:text-[#0BB671] transition-colors">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
