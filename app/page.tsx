@@ -22,7 +22,7 @@ export default function Home() {
       
       <Hero />
       <Approach />
-      <AboutMe />
+      {/* <AboutMe /> */}
       <VideoGrid />
       <YouTubeSection />
       <Services />
