@@ -10,14 +10,11 @@ import TravelGallery from './../src/components/TravelGallery';
 import AudienceReach from './../src/components/AudienceReach';
 import Contact from './../src/components/Contact';
 import AboutMe from './../src/components/AboutMe';
-import TopBar from '@/src/components/TopBar';
-import Navbar from '@/src/components/Navbar';
 
 export default function Home() {
   return (
     <main className="min-h-screen">
-        <TopBar />
-      <Navbar />
+      
       <Hero />
       <Approach />
       <AboutMe />

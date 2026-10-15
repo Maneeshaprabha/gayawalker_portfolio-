@@ -6,7 +6,13 @@ import TopBar from "./TopBar";
 export default function Hero() {
   return (
     <>
-   
+      {/* 
+        TopBar ekayi Navbar ekayi Hero section eken eliyata gaththa.
+        Dan meka page eke okkotama wada udin (z-50) freely float wenawa! 
+      */}
+      <TopBar />
+      <Navbar />
+
       <section id="home" className="relative min-h-screen w-full bg-[#041E15] text-white overflow-hidden flex flex-col justify-between pt-36 pb-12 px-6 md:px-12 rounded-b-[40px] md:rounded-b-[80px] shadow-2xl z-10">
         
         {/* Background radial glow */}
